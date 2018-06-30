@@ -3,8 +3,8 @@ from wallet import *
 import curses
     
 class Dealers():
-    def __init__(self):
-        self.nDealers= 0
+    def __init__(self, Dealers=0):
+        self.nDealers = Dealers 
 
     # Aumenta di n il numero dei trafficanti
     def addDealers(self,num):

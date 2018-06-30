@@ -1,6 +1,7 @@
 import curses
 from wallet import *
 from dealers import *
+from methLab import *
 
 stdscr = curses.initscr()   #Restituisce lo standard screen
 
@@ -12,13 +13,16 @@ curses.noecho()
 
 wallet = wallet()
 dealers = Dealers()
+methLab = methLab(0, 0)
 
 c = ' '
 while c != ord('0'):
     stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
-    stdscr.refresh()
+    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
+    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
+    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
   
-    wallet.addMoney(10)
+    stdscr.refresh()
     c = stdscr.getch()
 
 curses.endwin()
