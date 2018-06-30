@@ -6,15 +6,19 @@ class Dealers():
     def __init__(self):
         self.nDealers= 0
 
+    # Aumenta di n il numero dei trafficanti
     def addDealers(self,num):
         self.nDealers += num
     
+    # Ritorna il numero di trafficanti
     def getDealers():
         return nDealers
         
+    # Modifica il numero dei trafficanti
     def setDealers(self, num):
         self.nDealers = num
-
+    
+    # Mette a lavorare i trafficanti
     def makeMoney(self, wallet):
         wallet.addMoney(20 * nDealers)
 
@@ -26,7 +30,7 @@ if __name__ == "__main__":
     wallet = wallet() 
     dealers = Dealers()
     dealers.setDealers(1)
-
+    
 
     stdscr.refresh()
     stdscr.getch()
