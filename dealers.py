@@ -21,7 +21,7 @@ class Dealers():
     # Mette a lavorare i trafficanti
     def makeMoney(self, wallet):
         while True: 
-          wallet.addMoney(3 * nDealers)
+          wallet.addMoney(3 * self.nDealers)
           time.sleep(10)
 
 if __name__ == "__main__":

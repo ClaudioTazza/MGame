@@ -1,4 +1,5 @@
 import time
+import curses
 
 class methLab():
    def __init__(self, meth=0, cooks=0):
@@ -29,4 +30,9 @@ class methLab():
    def makeMeth(self):
        while True:
          self.meth = self.addMeth(5 * self.cooks)
-         time.sleep(10)
+         time.sleep(1)
+         print ("hai " + str(self.meth) + " g di meth\n")
+
+if __name__ == "__main__":
+    methLab = methLab()
+    methLab.makeMeth()
