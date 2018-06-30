@@ -1,3 +1,4 @@
+from threading import Thread
 import curses
 from wallet import *
 from dealers import *
@@ -13,17 +14,18 @@ curses.noecho()
 
 wallet = wallet()
 dealers = Dealers()
-methLab = methLab(0, 0)
+methLab = methLab(0, 1)
 
-c = ' '
-while c != ord('0'):
-    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
-    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
-    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
-    stdscr.addstr(4, 1, "Soldi : " + str( wallet.getMoney() ))
+p = Thread(target=methLab.makeMeth)
+p.start()
+
+while True: 
+    stdscr.addstr(4, 1, "Soldi: " + str( wallet.getMoney() ))
+    stdscr.addstr(6, 1, "Trafficanti: " + str( dealers.getDealers() ))
+    stdscr.addstr(8, 1, "Meth : " + str( methLab.getMeth() ))
+    stdscr.addstr(10, 1, "Cuochi : " + str( methLab.getCooks() ))
   
     stdscr.refresh()
-    c = stdscr.getch()
 
 curses.endwin()
 

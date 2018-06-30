@@ -1,3 +1,5 @@
+import time
+
 class methLab():
    def __init__(self, meth=0, cooks=0):
      self.meth = meth 
@@ -25,4 +27,6 @@ class methLab():
 
    # Avvia la produzione di meth 
    def makeMeth(self):
-       self.meth = addMeth(5 * self.cooks)
+       while True:
+         self.meth = self.addMeth(5 * self.cooks)
+         time.sleep(10)
